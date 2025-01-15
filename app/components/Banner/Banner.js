@@ -24,7 +24,7 @@ const stagger = {
 export default function Banner() {
   return (
     <>
-      <section className='banner-area relative z-10 overflow-hidden pt-[130] lg:pb-[120px] pb-[50px] '>
+      <section className='banner-area relative z-10 overflow-hidden pt-[130px] lg:pb-[120px] pb-[50px] '>
         <div className='container'>
           <motion.div
             className="md:grid grid-cols-[5fr_7fr] items-center"
