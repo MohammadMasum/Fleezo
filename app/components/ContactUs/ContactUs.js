@@ -14,7 +14,7 @@ export default function ContactUs() {
     <>
       <section className='lg:py-[120px] py-[50px]'>
         <div className="container">
-            <div className='grid xl:grid-cols-[5fr_7fr] gap-[20px_50px] bg-white md:p-[45px] p-[30px] md:rounded-[30px] rounded-[20px]'>
+            <div className='grid lg:grid-cols-[5fr_7fr] gap-[20px_50px] bg-white md:p-[45px] p-[30px] md:rounded-[30px] rounded-[20px]'>
               <div className='bg-[#EEEAFF] p-[40px_30px] md:rounded-[30px] rounded-[20px]'>
                 <h2 className='2xl:text-[60px] xl:text-[56px] lg:text-[42px] text-[36px] mb-[15px]'>Contact Us</h2>
                 <p className='font-medium mb-[15px]'>We are always looking for ways to improve our products and services. Contact us and let us know how we can help you.</p>

@@ -64,7 +64,7 @@ export default function Faq() {
 
   return (
     <>
-      <section>
+      <section className='overflow-hidden'>
         <div className="container xl:!max-w-[1210px] relative z-10">
           <Image className='xl:block hidden absolute top-[50%] -left-[18%]' src={Food3} alt="Food3"/>
             <Image className='xl:block hidden absolute top-[10%] -right-[20%]' src={Food4} alt="Food4"/>

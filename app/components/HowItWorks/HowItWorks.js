@@ -2,45 +2,20 @@
 import React from 'react';
 import Link from "next/link";
 import Image from "next/image";
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import WorksThumbnail from "@/app/assets/images/how-it-works-thumb.png";
 import Polygon from "@/app/assets/images/polygon.svg";
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] } }
-};
-
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.3,
-    }
-  }
-};
 
 export default function HowItWorks() {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  React.useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
 
   return (
     <>
-        <section ref={ref} className='bg-white lg:py-[100px] py-[50px]'>
+        <section className='bg-white lg:py-[100px] py-[50px]'>
             <div className="container">
-                <motion.div className="grid xl:grid-cols-[4fr_8fr] gap-4 items-start" variants={stagger} initial="hidden" animate={controls}>
+                <div className="grid xl:grid-cols-[4fr_8fr] gap-4 items-start">
                     <div className='xl:pr-[50px] xl:mb-[0] mb-[30px]'>
                       <h2 className="main-title mb-[50px] xl:text-left text-center">How it works</h2>
-                      <Image className="xl:mx-0 mx-auto" src={WorksThumbnail} alt="Works Icon2"/>
+                      <Image className="xl:mx-0 mx-auto xl:max-w-full max-w-[200px]" src={WorksThumbnail} alt="Works Icon2"/>
                     </div>
                     <div className='grid sm:grid-cols-2 gap-[50px_80px]'>
                         {/* single item */}
@@ -84,7 +59,7 @@ export default function HowItWorks() {
                           <span className='hidden sm:block border-t-[2px] border-dashed border-[#838383] absolute -left-[30px] h-[2px] w-[50px] top-[32px] -z-10'></span>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     </>

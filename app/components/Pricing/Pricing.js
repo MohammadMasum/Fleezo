@@ -11,7 +11,7 @@ import Food2 from "@/app/assets/images/food2.png";
 export default function Pricing() {
   return (
     <>
-        <section className='lg:py-[120px] py-[50px]'>
+        <section className='lg:py-[120px] py-[50px] overflow-hidden'>
             <div className="container xl:!max-w-[1040px] relative z-10">
                 <Image className='xl:block hidden absolute top-[50%] -left-[25%]' src={Food1} alt="Food1"/>
                 <Image className='xl:block hidden absolute top-[10%] -right-[20%]' src={Food2} alt="Food2"/>
