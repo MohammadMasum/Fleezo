@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -12,27 +12,36 @@ import FeaturesIcon5 from "@/app/assets/images/features-icon5.svg";
 const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] } }
-  };
-  
-  const stagger = {
+};
+
+const stagger = {
     visible: {
-      transition: {
-        staggerChildren: 0.3,
-      }
+        transition: {
+            staggerChildren: 0.3,
+        }
     }
-  };
+};
+
 
 export default function Features() {
     const controls = useAnimation();
+    const [threshold, setThreshold] = useState(0.1); // Default threshold
+
+    // Dynamically set threshold based on screen width
+    useEffect(() => {
+        const newThreshold = window.innerWidth < 768 ? 0.05 : 0.1;
+        setThreshold(newThreshold);
+    }, []);
+
     const [ref, inView] = useInView({
-      triggerOnce: true,
-      threshold: 0.1,
+        triggerOnce: true,
+        threshold: threshold,
     });
-  
-    React.useEffect(() => {
-      if (inView) {
-        controls.start('visible');
-      }
+
+    useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        }
     }, [controls, inView]);
     return (
         <>
